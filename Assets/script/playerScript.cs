@@ -5,34 +5,28 @@ using UnityEngine;
 public class playerScript : MonoBehaviour
 {
     public Rigidbody rb;
-   // public float forwardForce = 2000f;
+    public float upwardForce = 10f;
     public float sidewayForce = 500f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float cooldown = 1f; // Cooldown time in seconds
+    private bool canJump = true;
 
-    // Update is called once per frame
-    // we marked this as "Fixed" Update because we 
-    // are using it to mess with physics
     void FixedUpdate()
     {
-        //Add a forward force
-        //rb.AddForce(0, 0, forwardForce*Time.deltaTime);
-
-        if (Input.GetKey("d"))
+        // Check if the cooldown has passed and the space key is pressed
+        if (canJump && Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(sidewayForce*Time.deltaTime, 0, 0,ForceMode.VelocityChange);
-        }
-        else if(Input.GetKey("a"))
-        {
-            rb.AddForce(-sidewayForce*Time.deltaTime, 0, 0,ForceMode.VelocityChange);
+            rb.AddForce(0f, upwardForce * Time.deltaTime, 0f, ForceMode.Impulse);
+            canJump = false; // Set canJump to false to initiate cooldown
+            Invoke("ResetJump", cooldown);
         }
 
-        //if(rb.position.y < -1f)
-        //{
-        //    FindObjectOfType<GameManager>().EndGame();
-        //}
+        // Add sideway force based on input
+        float horizontalInput = Input.GetAxis("Horizontal");
+        rb.AddForce(sidewayForce * horizontalInput * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+    }
+
+    void ResetJump()
+    {
+        canJump = true; // Set canJump to true after cooldown
     }
 }

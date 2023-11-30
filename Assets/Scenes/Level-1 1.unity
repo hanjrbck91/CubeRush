@@ -1302,6 +1302,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3294394274169992232, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
+      propertyPath: m_Mass
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294394274169992233, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
+      propertyPath: upwardForce
+      value: 15000
+      objectReference: {fileID: 0}
     - target: {fileID: 3294394274169992233, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
       propertyPath: forwardForce
       value: 2500
