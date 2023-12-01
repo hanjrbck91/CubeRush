@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class playerScript : MonoBehaviour
@@ -23,10 +24,17 @@ public class playerScript : MonoBehaviour
         // Add sideway force based on input
         float horizontalInput = Input.GetAxis("Horizontal");
         rb.AddForce(sidewayForce * horizontalInput * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+
+        if(gameObject.transform.position.y < -15f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 
     void ResetJump()
     {
         canJump = true; // Set canJump to true after cooldown
     }
+
+    
 }
