@@ -12,7 +12,7 @@ public class Move : MonoBehaviour
     {
         speed += .0001f;
 
-        transform.position += new Vector3(0f, 0f, -20f) * Time.deltaTime * speed;
+        transform.position += new Vector3(0f, 0f, -10f) * Time.deltaTime * speed;
     }
 
     private void OnTriggerEnter(Collider other)
