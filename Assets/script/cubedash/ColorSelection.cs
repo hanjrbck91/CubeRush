@@ -11,5 +11,6 @@ public class ColorSelection : MonoBehaviour
     public void OnButtonClick()
     {
         cube.GetComponent<Renderer>().material.color = gameObject.GetComponent<Image>().color;
+        Debug.Log("cube color Changed:" + gameObject.GetComponent<Image>().color);
     }
 }
