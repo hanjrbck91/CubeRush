@@ -7,7 +7,7 @@ public class cubeSpawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnCube", 0f, spawnInterval);
+        InvokeRepeating("SpawnCube", 1f, spawnInterval);
     }
 
     void SpawnCube()
@@ -21,7 +21,7 @@ public class cubeSpawner : MonoBehaviour
         // Make the instantiated cube a child of the cubeSpawner
         newCube.transform.parent = transform;
 
-        Destroy(newCube,5);
+        Destroy(newCube,10);
     }
 }
 //420.8

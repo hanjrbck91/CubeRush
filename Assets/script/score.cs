@@ -10,7 +10,7 @@ public class score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += .05f;
+        timer += .07f;
         scoreText.text = timer.ToString("0");
     }
 }
