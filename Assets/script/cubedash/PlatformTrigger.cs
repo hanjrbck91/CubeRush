@@ -10,6 +10,8 @@ public class PlatformTrigger : MonoBehaviour
     [HideInInspector]
     [SerializeField] int numberOfPlatforms;
     [SerializeField] GameObject ground;
+    [SerializeField] GameObject currentPlatform;
+    [SerializeField] GameObject oldplatform;
 
     private void Start()
     {
@@ -45,10 +47,16 @@ public class PlatformTrigger : MonoBehaviour
                 ground.GetComponent<Renderer>().material.color = Color.cyan;
             }
 
-            Instantiate(platform, new Vector3(0f, 0f, 380f), Quaternion.identity);
+             currentPlatform = Instantiate(platform, new Vector3(0f, 0f, 380f), Quaternion.identity);
+             oldplatform = currentPlatform;
 
         }
     }
-    
-    
+
+    private void Update()
+    {
+        Destroy(oldplatform,20f);
+    }
+
+
 }
