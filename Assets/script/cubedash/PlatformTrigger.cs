@@ -34,8 +34,9 @@ public class PlatformTrigger : MonoBehaviour
             }
             else if (numberOfPlatforms % 3 == 0)
             {
-                ground.GetComponent<Renderer>().material.color = Color.white;
-            }else if(numberOfPlatforms % 7 == 0)
+                ground.GetComponent<Renderer>().material.color = Color.clear;
+            }
+            else if(numberOfPlatforms % 7 == 0)
             {
                 ground.GetComponent<Renderer>().material.color = Color.blue;
             }

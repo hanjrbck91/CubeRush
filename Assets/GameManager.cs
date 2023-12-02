@@ -20,12 +20,21 @@ public class GameManager : MonoBehaviour
             gameHasEnded = true;
             Debug.Log("Game Over");   
             //Restarting the game
-            Invoke("Restart", restartDelay);
+            //Invoke("Restart", restartDelay);
         }
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BacktoMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
