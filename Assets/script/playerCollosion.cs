@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class playerCollosion : MonoBehaviour
 {
+    [SerializeField] GameObject gameoverPanel;
     public playerScript movement;
     public score playerScore;
     public Text finalScore;
@@ -38,6 +39,7 @@ public class playerCollosion : MonoBehaviour
             }
 
             movement.enabled = false;
+            gameoverPanel.SetActive(true);
             // Disable the player's movement.
             FindObjectOfType<GameManager>().EndGame();
         }

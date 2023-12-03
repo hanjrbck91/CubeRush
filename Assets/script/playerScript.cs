@@ -27,7 +27,7 @@ public class playerScript : MonoBehaviour
 
         if(gameObject.transform.position.y < -15f)
         {
-            FindObjectOfType<GameManager>().EndGame();
+            FindObjectOfType<GameManager>().Restart();
         }
     }
 

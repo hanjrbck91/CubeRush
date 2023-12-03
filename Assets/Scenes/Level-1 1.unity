@@ -405,6 +405,8 @@ MonoBehaviour:
   platformposition: {x: 0, y: 0, z: 0}
   numberOfPlatforms: 0
   ground: {fileID: 1015915975925853663}
+  currentPlatform: {fileID: 0}
+  oldplatform: {fileID: 0}
 --- !u!114 &553327804 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3294394274169992233, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
@@ -1300,7 +1302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1918467122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1784,6 +1786,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1918467121}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2103380623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2018,6 +2032,10 @@ PrefabInstance:
       propertyPath: playerScore
       value: 
       objectReference: {fileID: 410270243}
+    - target: {fileID: 3294394274169992238, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
+      propertyPath: gameoverPanel
+      value: 
+      objectReference: {fileID: 1918467121}
     - target: {fileID: 3294394274169992238, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
       propertyPath: highScoreText
       value: 
