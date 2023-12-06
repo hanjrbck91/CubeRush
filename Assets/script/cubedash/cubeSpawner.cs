@@ -14,7 +14,7 @@ public class cubeSpawner : MonoBehaviour
     {
         float randomX = Random.Range(-18.27f, -4.91f); // Adjust the range based on your scene
 
-        Vector3 spawnPosition = new Vector3(randomX, -9.3f, 373.3f);
+        Vector3 spawnPosition = new Vector3(randomX, -9.3f, 393.3f);
 
         GameObject newCube =  Instantiate(cubePrefab, spawnPosition, Quaternion.identity);
 

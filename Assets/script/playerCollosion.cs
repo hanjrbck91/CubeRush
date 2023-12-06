@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class playerCollosion : MonoBehaviour
 {
-    [SerializeField] GameObject gameoverPanel;
+    public GameObject gameoverPanel;
     public playerScript movement;
     public score playerScore;
     public Text finalScore;
