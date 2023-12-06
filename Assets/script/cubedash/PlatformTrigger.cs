@@ -7,47 +7,20 @@ public class PlatformTrigger : MonoBehaviour
 {
     [SerializeField] GameObject platform;
     [SerializeField] Vector3 platformposition;
-    [HideInInspector]
-    [SerializeField] int numberOfPlatforms;
     [SerializeField] GameObject ground;
     [SerializeField] GameObject currentPlatform;
     [SerializeField] GameObject oldplatform;
-
-    private void Start()
-    {
-        
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("PlatformSpawner"))
         {
-            
-            numberOfPlatforms++;
+            // Generate random hue and saturation values
+            float randomHue = Random.value;
 
-            if(numberOfPlatforms % 5 == 0)
-            {
-                ground.GetComponent<Renderer>().material.color= Color.green;
-            }
-            else if(numberOfPlatforms % 2 == 0)
-            {
-                ground.GetComponent<Renderer>().material.color= Color.red;
-            }
-            else if (numberOfPlatforms % 3 == 0)
-            {
-                ground.GetComponent<Renderer>().material.color = Color.clear;
-            }
-            else if(numberOfPlatforms % 7 == 0)
-            {
-                ground.GetComponent<Renderer>().material.color = Color.blue;
-            }
-            else if(numberOfPlatforms%6 == 0)
-            {
-                ground.GetComponent<Renderer>().material.color = Color.cyan;
-            }
+            // Create a color using the random hue and saturation, and set it as the ground color
+            ground.GetComponent<Renderer>().material.color = Color.HSVToRGB(randomHue, 1f, 1f);
 
-             currentPlatform = Instantiate(platform, new Vector3(0f, 0f, 380f), Quaternion.identity);
+            currentPlatform = Instantiate(platform, new Vector3(0f, 0f, 380f), Quaternion.identity);
              oldplatform = currentPlatform;
 
         }
