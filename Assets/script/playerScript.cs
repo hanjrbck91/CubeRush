@@ -46,6 +46,7 @@ public class playerScript : MonoBehaviour
 
         if(gameObject.transform.position.y < -15f)
         {
+            gameObject.SetActive(false);
             collision.gameoverPanel.SetActive(true);
             FindObjectOfType<GameManager>().EndGame();
         }
