@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class playerCollosion : MonoBehaviour
 {
+    public playerScript player;
     public GameObject gameoverPanel;
     public playerScript movement;
     public score playerScore;
@@ -44,4 +45,34 @@ public class playerCollosion : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
         }
     }
+    private void Update()
+    {
+        HandlePlayeroutofPlatform();
+    }
+
+    public void HandlePlayeroutofPlatform()
+    {
+        if (player.transform.position.y < -15f)
+        {
+            gameObject.SetActive(false);
+            gameoverPanel.SetActive(true);
+            FindObjectOfType<GameManager>().EndGame();
+
+            int currentScore = int.Parse(playerScore.scoreText.text);
+
+            finalScore.text = currentScore.ToString();
+
+            int highScore = PlayerPrefs.GetInt("HighScore", 0);
+
+            if (currentScore > highScore)
+            {
+                // Update the high score
+                highScore = currentScore;
+                PlayerPrefs.SetInt("HighScore", highScore);
+                highScoreText.text = highScore.ToString();
+            }
+        }
+    }
+
+    
 }

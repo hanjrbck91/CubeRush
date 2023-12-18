@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +9,8 @@ public class GameManager : MonoBehaviour
     public float restartDelay = 1f;
 
     public GameObject completeLevelUI;
+    public GameObject SettingPanel;
+    public bool isEnabled = false;
 
     public void CompleteLevel()
     {
@@ -37,4 +41,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
+    public void SettingPanelToggle()
+    {
+        isEnabled = !isEnabled;
+
+        SettingPanel.SetActive(isEnabled);
+    }  
 }

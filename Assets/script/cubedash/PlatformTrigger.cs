@@ -16,12 +16,11 @@ public class PlatformTrigger : MonoBehaviour
         {
             // Generate random hue and saturation values
             float randomHue = Random.value;
-
             // Create a color using the random hue and saturation, and set it as the ground color
             ground.GetComponent<Renderer>().material.color = Color.HSVToRGB(randomHue, 1f, 1f);
 
             currentPlatform = Instantiate(platform, new Vector3(0f, 0f, 380f), Quaternion.identity);
-             oldplatform = currentPlatform;
+            oldplatform = currentPlatform;
 
         }
     }
