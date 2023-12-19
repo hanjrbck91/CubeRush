@@ -47,14 +47,17 @@ public class playerCollosion : MonoBehaviour
     }
     private void Update()
     {
-        HandlePlayeroutofPlatform();
+        if (player.transform.position.y < -15f)
+        {
+            HandlePlayeroutofPlatform();
+            Debug.Log("Player is out of platform;");
+        }
     }
 
     public void HandlePlayeroutofPlatform()
     {
-        if (player.transform.position.y < -15f)
-        {
-            gameObject.SetActive(false);
+            movement.enabled = false;
+            //gameObject.SetActive(false);
             gameoverPanel.SetActive(true);
             FindObjectOfType<GameManager>().EndGame();
 
@@ -71,8 +74,5 @@ public class playerCollosion : MonoBehaviour
                 PlayerPrefs.SetInt("HighScore", highScore);
                 highScoreText.text = highScore.ToString();
             }
-        }
-    }
-
-    
+    }   
 }

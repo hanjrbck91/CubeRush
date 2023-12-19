@@ -679,7 +679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -8.299988}
+  m_AnchoredPosition: {x: -30.000135, y: -22.700005}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &410270239
@@ -1373,7 +1373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -8.299988}
+  m_AnchoredPosition: {x: -30, y: -22.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &746959201
@@ -1903,7 +1903,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56f4b9ee925dede489e347ae0a8eea4c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 554d0ce6ee5d2af418aa3203dac27a3a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.66
   m_Pitch: 1
@@ -2841,7 +2841,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -11.095905, y: -11.487047, z: 188.13617}
-  m_LocalScale: {x: 15, y: 1, z: 500}
+  m_LocalScale: {x: 15, y: 0.02, z: 500}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6038814822397605995}
@@ -2987,6 +2987,10 @@ PrefabInstance:
     - target: {fileID: 3294394274169992233, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
       propertyPath: sidewayForce
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294394274169992233, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
+      propertyPath: tiltSensitivity
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3294394274169992235, guid: 4f1d9b5fa8b76ae49a1fd321e0fd6269, type: 3}
       propertyPath: m_RootOrder

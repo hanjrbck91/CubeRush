@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerScript : MonoBehaviour
 {
@@ -6,8 +7,8 @@ public class playerScript : MonoBehaviour
 
     public Rigidbody rb;
     public float upwardForce = 10f;
-    public float sidewayForce = 500f;
-    public float tiltSensitivity = 10f; // Adjust this value based on the desired sensitivity
+    public float sidewayForce = 40f;
+    public float tiltSensitivity = 6f; // Adjust this value based on the desired sensitivity
 
     [SerializeField] ColorData colorData;
 
@@ -33,19 +34,28 @@ public class playerScript : MonoBehaviour
         #endregion
 
         // Add sideway force based on input
-        float horizontalInput = Input.GetAxis("Horizontal");
-        rb.AddForce(sidewayForce * horizontalInput * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        
 
-        // Add sideway force based on tilt input
-        float tiltInput = Input.acceleration.x * tiltSensitivity;
-        rb.AddForce(sidewayForce * tiltInput * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-
-        if (gameObject.transform.position.y < -15f)
+        if (SceneManager.GetSceneByBuildIndex(1).isLoaded)
         {
-            gameObject.SetActive(false);
-            collision.gameoverPanel.SetActive(true);
-            FindObjectOfType<GameManager>().EndGame();
+            float horizontalInput = Input.GetAxis("Horizontal");
+            rb.AddForce(sidewayForce * horizontalInput * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+
+
+            // Add sideway force based on tilt input
+            float tiltInput = Input.acceleration.x * tiltSensitivity;
+            rb.AddForce(sidewayForce * tiltInput * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+
+            if (gameObject.transform.position.y < -15f)
+            {
+                gameObject.SetActive(false);
+                collision.gameoverPanel.SetActive(true);
+                FindObjectOfType<GameManager>().EndGame();
+            }
         }
+
+
+       
     }
 
     #region Mobile Controlls
