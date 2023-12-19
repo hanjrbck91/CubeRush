@@ -1,2 +1,3 @@
 # CubeRush
-My first unity week project
+Click to play the game.
+https://hadhilnjr.itch.io/cube-rush
